@@ -19,22 +19,8 @@ store.subscribe(() => {
 });
 
 
-
-store.dispatch(addExpense({description: 'Water bill', note: '', amount: 100, createdAt: 10}));
-store.dispatch(addExpense({description: 'Gas bill', note: '', amount: 200, createdAt: 350}));
-store.dispatch(addExpense({description: 'Rent', note: '', amount: 100, createdAt: 5}));
-
-
-// store.dispatch(setTextFilter('water'));
-
-// setTimeout(() => {
-//     store.dispatch(setTextFilter('bill'));
-
-// }, 3000);
-
 const state = store.getState();
 const visible = getVisibleExpenses(state.expenses, state.filters);
-console.log(visible);
 
 const jsx = (
     <Provider store = {store}>
